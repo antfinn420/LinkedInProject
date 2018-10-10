@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <link rel="stylesheet" href="../css/stars.css">
+</head>
+
+<body>
+    <header class="main-header">
+    </header>
+
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+        <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+        <span id="userBalance"></span>
+    </div>
+
+    <div id="allStars" hidden=true>
+        <div id="pleaseRateUs" style="text-align:center; padding: 10px 10px 0px">We've been trying hard all this time. If you rate us we will know we did it right!</div>
+        <div class="stars">
+            <input type="radio" name="star" class="star-1" id="star-1" />
+            <label class="star-1" for="star-1">1</label>
+            <input type="radio" name="star" class="star-2" id="star-2" />
+            <label class="star-2" for="star-2">2</label>
+            <input type="radio" name="star" class="star-3" id="star-3" />
+            <label class="star-3" for="star-3">3</label>
+            <input type="radio" name="star" class="star-4" id="star-4" />
+            <label class="star-4" for="star-4">4</label>
+            <input type="radio" name="star" class="star-5" id="star-5" />
+            <label class="star-5" for="star-5">5</label>
+            <span></span>
+        </div>
+    </div>
+    <div id="badEval" style="text-align:center;" hidden="true">We promise we will try harder to work better. Send me your suggestions at help@snov.io</div>
+
+    <section class="main-body person-body contacts-table" id="personInfoBody">
+        <div class="media hidden">
+            <div class="media-left">
+                <div class="contact-avatar js-contact-avatar">
+                    <img class="media-object" src="" alt="">
+                </div>
+            </div>
+            <div class="media-middle media-body">
+                <p class="contact-name js-contact-name"></p>
+                <span class="contact-saved-list js-contact-saved-list" title=""></span>
+                <p class="contact-descr js-contact-description"></p>
+                <p class="contact-info text-muted js-contact-info small"></p>
+                <div>
+                    <div id="emails" class="hidden text-muted contact-emails"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="emailsBlock" class="hidden">
+            <img class="loader js-loader" src="/img/loader.svg" alt="loading...">
+            <div class="text-muted small text-center">Looking for emails...</div>
+        </div>
+
+    </section>
+
+    <section class="main-footer js-footer form-inline">
+        <div id="errorMessage" style="color:red;display:none">Error</div>
+        <div class="form-group">
+            <select class="form-control" id="userPeopleSelect">
+                <!-- list option foreach -->
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="sendPerson" data-toggle="button" data-loading-text="Saving...">Find Emails and Save</button>
+            <a class="btn btn-success hidden" target="_blank" data-section="prospects" href="#">Go to list &rarr;</a>
+        </div>
+    </section>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/CheckAuth.js"></script>
+    <script src="../js/Common.js"></script>
+    
+    <script src="../js/TwitterParser.js"></script>
+    <script src="../js/Twitter.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <link rel="stylesheet" href="../css/stars.css">
+</head>
+
+<body>
+    <header class="main-header">
+    </header>
+
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+        <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+        <span id="userBalance"></span>
+    </div>
+
+    <section class="main-body contacts-table">
+
+        <div class="alert alert-warning" role="alert">
+            <!-- <a href="https://medium.com/linked-helper/what-kind-of-limits-should-i-use-88df661c6cf0" target="_blank">To prevent your LinkedIn account from blocking</a> -->
+
+            <!-- <strong>Warning!</strong> To prevent your LinkedIn account from blocking we do not recommend to use this function excessively. -->
+            <!-- You can find the details
+            <a href="https://www.google.com/search?q=linkedin+limits" target="_blank">here</a> -->
+
+            To keep your LinkedIn account safe from getting blocked, check the current
+            LinkedIn limits
+            <a href="https://medium.com/linked-helper/what-kind-of-limits-should-i-use-88df661c6cf0" target="_blank">here</a>
+        </div>
+
+        <label style="margin: 0px 0px 20px 0px">Specify page range to extract:</label>
+        <div class="">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Start page</label>
+                    <input class="form-control" type="number" disabled="true" min="1" max="100" id="startPage" value="1">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>End page</label>
+                    <input class="form-control" type="number" min="1" max="100" id="finishPage" value="1">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Timeout min (s)</label>
+                    <input class="form-control" type="number" min="1" max="120" step="1" id="sleepValueMin" value="3">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Timeout max (s)</label>
+                    <input class="form-control" type="number" min="1" max="120" step="1" id="sleepValueMax" value="7">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main-footer js-footer form-inline hidden" id="panelPeople">
+        <div class="form-group">
+            <button class="btn btn-primary" data-toggle="button" data-loading-text="Saving..." id="sendPeople">Find
+                Emails and Save</button>
+            <a class="btn btn-success hidden" target="_blank" data-section="prospects" href="#">Go to list &rarr;</a>
+        </div>
+    </section>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Common.js"></script>
+    <script src="../js/linkedInAutoSearchNew.js"></script>
+</body>
+
+</html>

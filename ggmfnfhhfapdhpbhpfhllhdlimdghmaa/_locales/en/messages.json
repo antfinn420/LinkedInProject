@@ -1,0 +1,11 @@
+{
+  "app_name": {
+    "message": "Linked Helper"
+  },
+  "app_description": {
+    "message": "Allows you to automate your work with LinkedIn. Growth your contact network, broadcast personal messages, improve your profile"
+  },
+  "toolbar_button": {
+    "message": "Linked Helper"
+  }
+}

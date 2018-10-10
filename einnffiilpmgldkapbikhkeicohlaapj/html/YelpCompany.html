@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <link rel="stylesheet" href="../css/animation.css">
+</head>
+
+<body>
+    <header class="main-header">
+    </header>
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+      <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+      <span id="userBalance"></span>
+    </div>
+
+    <section class="main-body company-body contacts-table" id="companyInfoBody">
+        <!--<div class="media ">
+            <div class="media-left media-middle">
+                <div class="contact-avatar js-contact-avatar">
+                    <img class="media-object" src="" alt="">
+                </div>
+            </div>
+            <div class="media-middle media-body">
+                <p class="contact-name js-contact-name"></p>
+                <p class="contact-descr js-contact-description"></p>
+                <p class="contact-info text-muted js-contact-info small"></p>
+            </div>
+
+        </div>-->
+
+        <form>
+        </form>
+    </section>
+
+    <section class="main-footer form-inline">
+        <label id="errorMessage" style="color:red;display:none">Error</label>
+
+        <div class="form-group">
+            <select class="form-control" id="userList">
+                <!-- list option foreach -->
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" id="sendCompany">Send</button>
+        </div>
+    </section>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/CheckAuth.js"></script>
+    <script src="../js/Common.js"></script>
+    <script src="../js/YelpCompany.js"></script>
+</body>
+
+</html>

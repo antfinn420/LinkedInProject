@@ -1,0 +1,28 @@
+What I need to do to broken down to understand by writing it out:
+
+
+Driver is already open... so it might be hard to connect it to an existing session, rather than just start by scratch might be easier..
+
+ ---- Might start up manually ----------
+| 1. Set up the filters programmatically |
+| 2. Start the search 				     |
+ ---------------------------------------
+
+ Reconnect to driver after you set up filters here
+ 
+ -- Start here first
+ 
+3. Iterate through the results to visit each profile
+4. Extract the information from each profile
+	a) Get the email from each profile
+5. Download the information into a csv file
+6. Do an email merge to email each 
+
+
+
+
+
+Notes:
+Being able to package and run the script
+saving url / session ID
+how does the email finder get email if its not available on the page..?

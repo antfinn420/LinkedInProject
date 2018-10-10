@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <link rel="stylesheet" href="../css/stars.css">
+</head>
+
+<body>
+    <header class="main-header">
+    </header>
+
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+        <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+        <span id="userBalance"></span>
+    </div>
+
+    <form>
+        <div id="allStars" hidden=true>
+            <div id="pleaseRateUs" style="text-align:center; padding: 5px 10px 0px">We've been trying hard all this time. If you rate us we will know we did it right!</div>
+            <div class="stars">
+                <input type="radio" name="star" class="star-1" id="star-1" />
+                <label class="star-1" for="star-1">1</label>
+                <input type="radio" name="star" class="star-2" id="star-2" />
+                <label class="star-2" for="star-2">2</label>
+                <input type="radio" name="star" class="star-3" id="star-3" />
+                <label class="star-3" for="star-3">3</label>
+                <input type="radio" name="star" class="star-4" id="star-4" />
+                <label class="star-4" for="star-4">4</label>
+                <input type="radio" name="star" class="star-5" id="star-5" />
+                <label class="star-5" for="star-5">5</label>
+                <span></span>
+            </div>
+        </div>
+        <div id="badEval" style="text-align:center;" hidden="true">We promise we will try harder to work better. Send me your suggestions at help@snov.io</div>
+
+        <div class="main-body contacts-table hidden" id="waitAnimation">
+            <br>
+            <img class="loader js-loader" src="/img/loader.svg" alt="loading...">
+            <div class="text-muted small text-center">Looking for emails...</div>
+            <br>
+        </div>
+
+        <div class="main-body contacts-table" id="domainEmails">
+            <br>
+            <img class="loader js-loader" src="/img/loader.svg" alt="loading...">
+            <div class="text-muted small text-center">Looking for emails...</div>
+            <br>
+        </div>
+
+        <section class="main-body contacts-table hidden" id="error">
+            <br>
+            <div class="text-muted small text-center">Something went wrong</div>
+            <br>
+        </section>
+
+        <section class="main-body contacts-table hidden" id="importOptions">
+
+            <label style="margin: 0px 0px 20px 0px">Import options:</label>
+
+            <div>
+                <label>Contacts by domain:</label>
+                <input class="form-control" type="number" min="1" max="100" id="contactsByDomain" value="5" style="width: 50%">
+            </div>
+
+            <div style="margin: 10px 0px 0px 25px">
+                <label for="emailsOnly" class="custom-radio uploader-radio">
+                    <input type="radio" name="type" id="emailsOnly" checked="" value="0">Emails only
+                </label>
+
+                <!-- <div class="upload-container-checkbox"> -->
+                <p class="custom-checkbox bare">
+                    <input checked="" type="checkbox" name="generic" value="1">
+                    <span style="margin: 0px 0px 0px 10px">Generic</span>
+                </p>
+
+                <p class="custom-checkbox bare">
+                    <input checked="" type="checkbox" name="personal" value="1">
+                    <span style="margin: 0px 0px 0px 10px">Personal</span>
+                </p>
+
+                <p class="custom-checkbox bare">
+                    <input type="checkbox" name="others" value="1">
+                    <span style="margin: 0px 0px 0px 10px">All other</span>
+                </p>
+
+                <label for="profilesOnly" class="custom-radio uploader-radio">
+                    <input type="radio" id="profilesOnly" name="type" value="1">
+                    <span>Prospects</span>
+                </label>
+            </div>
+
+        </section>
+
+        <section class="main-body contacts-table hidden" style="font-weight" id="importConfirm">
+            <label style="margin: 0px 0px 20px 0px">Export to prospects:</label>
+
+            <p id="label1">We found for X domains</p>
+            <p id="label2">One domain search for emails costs 2 credits.</p>
+            <p id="label3">Export will take Y credits.</p>
+            <!-- <p id="label4">You have Z credits left on your balance.</p> -->
+        </section>
+
+        <div id="completeSearchTemplate" style="padding: 10px 0px 10px 20px" class="hidden">
+            <button class="btn btn-primary" data-toggle="button" id="next_button">Get emails by domains &raquo;</button>
+            <!-- <div>
+                <a class="js-btn-complete-search" href="#" id="btn-complete-search"><strong>Get emails by domain list &rarr;</strong></a>
+            </div> -->
+        </div>
+
+        <section class="main-footer js-footer form-inline hidden" id="footer">
+            <div class="form-group">
+                <select class="form-control people-lists hidden" id="userPeopleSelect">
+                    <!-- list option foreach -->
+                </select>
+            </div>
+            <div class="form-group">
+                <a id="btnSendEmailList" class="btn btn-primary hidden" data-toggle="button" data-loading-text="Saving..." href="#">Save selected</a>
+                <a class="btn btn-success hidden" target="_blank" data-section="prospects" href="#">Go to list &rarr;</a>
+
+                <!--<img id="getDomainEmails" style="cursor: pointer; display: none" src="../img/refresh.png"/>-->
+            </div>
+        </section>
+
+    </form>
+
+    <div class="hidden">
+        <div class="alert alert-warning" role="alert" style="margin-bottom:0px; padding:5px 15px" id="descr">
+            Use Snovio Extension with Google search results to quickly find email addresses and prospects from domains.
+            <div>
+                <input type="checkbox" id="neverShow" style="margin-top:0px; position:relative;top:3px;">
+                <label for="neverShow" style="color:grey; font-size:11px;margin-bottom: 0px;font-weight:lighter">never show this tip again.</label>
+            </div>
+        </div>
+
+        <div id="emailItemTemplate">
+            <div class="js-list-item list-item list-item__email">
+                <label class="checkbox custom-checkbox">
+                    <input type="checkbox" name="people[]" checked value="">
+
+                    <span class="contact-name js-contact-email">
+                        {{email}}
+                    </span>
+                    <span class="contact-saved-list js-contact-saved-list"></span>
+                </label>
+            </div>
+        </div>
+        <div id="notFoundTemplate">
+            <br>
+            <div class="text-muted small text-center">Domains not found</div>
+            <br>
+        </div>
+
+        <div id="revealLinkTemplate">
+            <div class="alert alert-info">
+                <a href="https://app.snov.io/login" target="_blank">
+                    <strong>Log in</strong>
+                </a> or
+                <a href="https://app.snov.io/register" target="_blank">
+                    <strong>Sign Up</strong>
+                </a> to reveal emails
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/CheckAuth.js"></script>
+    <script src="../js/Common.js"></script>
+    <script src="../js/tld.js"></script>
+    <script src="../js/GoogleSearch.js"></script>
+</body>
+
+</html>

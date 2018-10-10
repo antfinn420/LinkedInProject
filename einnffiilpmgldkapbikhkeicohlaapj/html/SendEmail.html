@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="row">
+            <div class="col-xs-6">
+                <a class="textlogo" href="https://app.snov.io" target="_blank">snov.io</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <span id="userName" class="small text-muted">
+                    <!--username@example.com-->
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+        <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+        <span id="userBalance"></span>
+    </div>
+
+    <div id="sendBlock">
+        <section class="main-body">
+            <p id="mailTo">Recipients:</p>
+            <!-- <label class="hidden" id="savedTemplates_label">Saved templates</label> -->
+            <select class="form-control people-lists hidden" id="savedTemplates" placeholder="Saved templates" title="Saved templates">
+            </select>
+            <!-- <label>Subject</label> -->
+            <input id="mailSubject" type="text" class="form-control" placeholder="Subject" title="Subject" style="margin-top: 7px">
+            <!-- <label>Content</label> -->
+            <textarea id="mailBody" class="form-control" rows="3" placeholder="Content" title="Content" style="margin-top: 7px"></textarea>
+        </section>
+
+        <section class="main-footer js-footer form-inline">
+            <div id="errorMessage" style="color:red;display:none">Error</div>
+            <div>
+                <button class="btn btn-primary" id="sendEmail" data-toggle="button" data-loading-text="Sending...">Send email</button>
+                <a href="Popup.html" style="font-size: 10pt; padding: 0px 0px 0px 20px" id="btnBack3">
+                    <strong>&larr; Back</strong>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div id="successBlock" class="hidden">
+        <section class="main-body">
+            <div style="color:green">Your message is being sent</div>
+        </section>
+
+        <section class="main-footer js-footer form-inline">
+            <a class="btn btn-success" href="#" id="btnBack">&larr; Back</a>
+        </section>
+
+    </div>
+
+    <div id="errorBlock" class="hidden">
+        <section class="main-body">
+            <div id="smtpError" style="color:red">Error</div>
+        </section>
+        <section class="main-footer js-footer form-inline">
+            <a class="btn btn-success" href="#" id="btnBack2">&larr; Back</a>
+        </section>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Common.js"></script>
+
+    <script src="../js/SendEmail.js"></script>
+</body>
+
+</html>

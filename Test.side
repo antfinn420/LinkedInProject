@@ -1,0 +1,80 @@
+{
+  "id": "6a134180-67c3-4c40-b437-fb932929a108",
+  "version": "1.1",
+  "name": "Untitled Project",
+  "url": "https://www.google.com",
+  "tests": [{
+    "id": "5b78c72c-260a-45c3-b796-a0ce8ca43c64",
+    "name": "Untitled",
+    "commands": [{
+      "id": "e17d4eb8-7a4c-4154-bc9e-82780f9a0b61",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfe260be-10db-4b40-b696-41e06920468b",
+      "comment": "",
+      "command": "click",
+      "target": "id=lga",
+      "targets": [
+        ["id=lga", "id"],
+        ["css=#lga", "css"],
+        ["xpath=//div[@id='lga']", "xpath:attributes"],
+        ["xpath=//span[@id='body']/center/div", "xpath:idRelative"],
+        ["xpath=//span/center/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57e11bfb-9d90-412c-866e-0b64d54d8369",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=input[name=\"q\"]", "css"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3de8c417-eb26-40fd-af1a-9f5efdf48424",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=input[name=\"q\"]", "css"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "hello world"
+    }, {
+      "id": "2582c29c-84df-490b-8b17-d675925488e1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=input[name=\"q\"]", "css"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }]
+  }],
+  "suites": [{
+    "id": "3f43b0ba-e9e5-442b-9678-03e18d548913",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5b78c72c-260a-45c3-b796-a0ce8ca43c64"]
+  }],
+  "urls": ["https://www.google.com/"],
+  "plugins": []
+}

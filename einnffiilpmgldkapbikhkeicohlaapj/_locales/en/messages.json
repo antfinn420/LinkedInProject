@@ -1,0 +1,11 @@
+{
+    "appDesc": {
+        "message": "Find email addresses from Linkedin profiles or websites. Validate email addresses with email verifier and message with Email Sender"
+    },
+    "appName": {
+        "message": "Snovio - Email Finder"
+    },
+    "appShortName": {
+        "message": "Snovio"
+    }
+}

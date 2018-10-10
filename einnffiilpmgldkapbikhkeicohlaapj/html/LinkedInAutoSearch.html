@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <!--<link rel="stylesheet" href="../css/animation.css">-->
+    <link rel="stylesheet" href="../css/stars.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="row">
+            <div class="col-xs-6">
+                <a class="textlogo" href="https://app.snov.io" target="_blank">snov.io</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <span id="userName" class="small text-muted">
+                    <!--username@example.com-->
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="progress progress-balance hidden" id="userBalanceBlock">
+        <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+        <span id="userBalance"></span>
+    </div>
+
+    <section class="main-body contacts-table">
+
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> To prevent your LinkedIn account from blocking we do not recommend to use this function excessively.
+            You can find the details
+            <a href="https://www.google.com/search?q=linkedin+limits" target="_blank">here</a>
+        </div>
+
+        <label style="margin: 0px 0px 20px 0px">Specify page range to extract:</label>
+        <div class="">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Start page</label>
+                    <input class="form-control" type="number" min="1" max="100" id="startPage" value="1">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>End page</label>
+                    <input class="form-control" type="number" min="1" max="100" id="finishPage" value="5">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Timeout min (ms)</label>
+                    <input class="form-control" type="number" min="0" max="10000" step="100" id="sleepValueMin" value="250">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Timeout max (ms)</label>
+                    <input class="form-control" type="number" min="0" max="10000" step="100" id="sleepValueMax" value="350">
+                </div>
+            </div>
+    </section>
+
+    <div class="progress" style="margin: 10px 20px">
+        <div class="progress-bar progress-bar-striped active" style="width:0%" id="progressStatus">
+            0%
+        </div>
+    </div>
+
+    <span class="text-danger hidden" style="padding: 0px 0px 0px 20px" id="warning2">Do not close the window until the transfer is complete</span>
+    <div class="alert alert-danger hidden" style="margin: 10px 20px" role="alert" id="error">
+        Error getting data on the page. Try to open the page yourself.
+    </div>
+
+    <section class="main-footer js-footer form-inline">
+        <div class="form-group">
+            <select id="userPeopleSelect" class="form-control">
+                <!-- list option foreach -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" data-toggle="button" data-loading-text="Saving..." id="sendPeople">Find Emails and Save</button>
+            <a class="btn btn-success hidden" target="_blank" data-section="prospects" href="#">Go to list &rarr;</a>
+        </div>
+    </section>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/CheckAuth.js"></script>
+    <script src="../js/Common.js"></script>
+
+    <script src="../js/localStorage.js"></script>
+
+    <script src="../js/LinkedInPersonParser.js"></script>
+    <script src="../js/LinkedInCompanyParser.js"></script>
+    <script src="../js/LinkedInAutoSearchParser.js"></script>
+
+    <script src="../js/limitationLI.js"></script>
+    
+    <script src="../js/LinkedInAutoSearch.js"></script>
+</body>
+
+</html>

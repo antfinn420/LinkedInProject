@@ -1,0 +1,2 @@
+$('body').append($('<div id="snovio_extension" style="display: none"></div>'));
+$('.button.shadow.transparent').html('<img src="assets/img/icon__chrome.svg" alt="" width="20" height="20" class="icon">Installed');

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/plugin.css">
+    <link rel="stylesheet" href="../css/stars.css">
+</head>
+
+<body>
+<header class="main-header">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="textlogo" href="https://app.snov.io" target="_blank">snov.io</a>
+        </div>
+        <div class="col-xs-6 text-right">
+                <span id="userName" class="small text-muted">
+                    <!--username@example.com-->
+                </span>
+        </div>
+    </div>
+</header>
+<ul class="nav nav-pills tablist" role="tablist">
+    <li role="presentation" class="active">
+        <a href="#LinkedInSearchPeople" id="peopleTabLink" role="tab" data-toggle="tab">
+            People
+            <span class="" id="countPeople"></span>
+            <span class="" id="countSelectedPeople"></span>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#LinkedInSearchCompanies" id="companiesTabLink" role="tab" data-toggle="tab">
+            Companies
+            <span class="" id="countCompanies"></span>
+            <span class="" id="countSelectedCompanies"></span>
+        </a>
+    </li>
+</ul>
+<div class="progress progress-balance hidden" id="userBalanceBlock">
+    <div class="progress-bar" id="userBalanceBar" role="progressbar"> </div>
+    <span id="userBalance"></span>
+</div>
+
+<div id="allStars" hidden=true>
+    <div id="pleaseRateUs" style="text-align:center; padding: 10px 10px 0px">We've been trying hard all this time. If you rate us we will know we did it right!</div>
+    <div class="stars">
+        <input type="radio" name="star" class="star-1" id="star-1" />
+        <label class="star-1" for="star-1">1</label>
+        <input type="radio" name="star" class="star-2" id="star-2" />
+        <label class="star-2" for="star-2">2</label>
+        <input type="radio" name="star" class="star-3" id="star-3" />
+        <label class="star-3" for="star-3">3</label>
+        <input type="radio" name="star" class="star-4" id="star-4" />
+        <label class="star-4" for="star-4">4</label>
+        <input type="radio" name="star" class="star-5" id="star-5" />
+        <label class="star-5" for="star-5">5</label>
+        <span></span>
+    </div>
+</div>
+
+<div class="tab-content">
+    <!--<div class="main-body contacts-table hidden" id="warning">
+        <span class="text-danger">Please visit a LinkedIn profile for much better search result</span>
+    </div>-->
+
+    <div id="LinkedInSearchPeople" role="tabpanel" class="tab-pane fade in active">
+
+        <form>
+            <section id="peopleList" class="main-body contacts-table">
+                <div id="notFoundTemplate" class="hide">
+                    <br>
+                    <div class="text-muted small text-center">Nothing found</div>
+                    <br>
+                </div>
+                <!-- persons foreach -->
+            </section>
+
+            <!-- <div class="main-body contacts-table hidden" id="warning2">
+                <span class="text-danger">Do not close the window until the transfer is complete</span>
+            </div> -->
+            <span class="text-danger hidden" style="padding: 0px 0px 0px 20px" id="warning2">Do not close the window until the transfer is complete</span>
+            
+            <section class="main-footer js-footer form-inline">
+                <div class="form-group">
+                    <select id="userPeopleSelect" class="form-control">
+                        <!-- list option foreach -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" data-toggle="button" data-loading-text="Saving..." id="sendPeople">Find Emails and Save</button>
+                    <a class="btn btn-success hidden" target="_blank" data-section="prospects" href="#">Go to list &rarr;</a>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <div id="LinkedInSearchCompanies" role="tabpanel" class="tab-pane fade">
+        <form>
+            <section id="companiesList" class="main-body contacts-table">
+                <!-- persons foreach -->
+            </section>
+
+            <div class="main-body contacts-table hidden" id="warning3">
+                <span class="text-danger">Do not close the window until the transfer is complete</span>
+            </div>
+
+
+            <section class="main-footer js-footer form-inline">
+                <div class="form-group">
+                    <select id="userCompaniesSelect" class="form-control">
+                        <!-- list option foreach -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" data-toggle="button" data-loading-text="Saving..." id="sendCompanies" href="#">Save companies</button>
+                    <a class="btn btn-success hidden" target="_blank" data-section="companies" href="#">Go to list &rarr;</a>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+
+<div class="hidden">
+    <div id="personTemplate">
+        <div class="js-list-item list-item list-item__person">
+            <label class="checkbox custom-checkbox">
+                <input type="checkbox" name="people[]" checked value="">
+
+                <span class="contact-avatar js-contact-avatar">
+                        <img src="" alt="">
+                    </span>
+                <span class="contact-name js-contact-name">
+                        {{person.name}}
+                    </span>
+                <span class="contact-saved-list js-contact-saved-list"></span>
+            </label>
+        </div>
+    </div>
+
+    <div id="companyTemplate">
+        <div class="js-list-item list-item list-item__company">
+            <label class="checkbox custom-checkbox">
+                <input type="checkbox" name="companies[]" checked value="" class="company_checkbox">
+
+                <span class="contact-avatar js-contact-avatar">
+                        <img src="" alt="">
+                    </span>
+                <span class="contact-name js-contact-name">
+                        {{company.name}}
+                    </span>
+                <span class="contact-saved-list js-contact-saved-list"></span>
+            </label>
+        </div>
+    </div>
+
+    <div id="selectAllTemplate">
+        <div class="js-select-all list-item list-item__select-all">
+            <label class="checkbox custom-checkbox">
+                <input type="checkbox" name="selectAll" checked value="" class="">
+                Select/unselect all
+            </label>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/CheckAuth.js"></script>
+<script src="../js/Common.js"></script>
+<script src="../js/Content.js"></script>
+<script src="../js/Facebook.js"></script>
+<script src="../js/FacebookSearch.js"></script>
+
+
+</body>
+</html>
